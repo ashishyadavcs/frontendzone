@@ -16,6 +16,7 @@
             nav{
                 background: purple;
                 z-index: 2;
+                border-bottom: 4px solid #eca2ff;
             }
             nav ul {
                 display: flex;
@@ -33,8 +34,10 @@
                 display: flex;
                 align-items: center;
                 cursor: pointer;
+                text-align: center;
             }
             li .dropdown{
+                min-width: 100px;
                 position: absolute;
                 top:50%;
                 flex-direction: column;
@@ -42,20 +45,32 @@
                 transition: all 0.3s;
                 pointer-events: none;
             }
+            /*updated*/
             li:hover .dropdown{
                 pointer-events:all;
                 top: 100%;
                 opacity: 1;
                 background: purple;
             }
-            body:has(.more:hover)::before{
+            .dropdown li{
+                border-bottom: 1px solid #ddd;
+            }
+            /*updated*/
+            body::before{
               content: "";
               z-index: -1;
               position: absolute;
               height: 100vh;
               width: 100vw;
               background: rgba(0,0,0,0.7);
+              transition: all 0.3s;
+              pointer-events: none;
+              opacity: 0;
             }
+            body:has(.more:hover)::before{
+              opacity: 1;
+            }
+           
         </style>
     </head>
     <body>
