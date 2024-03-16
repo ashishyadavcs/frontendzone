@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                font-family: sans-serif;
+            }
+            nav{
+                background: purple;
+                z-index: 2;
+            }
+            nav ul {
+                display: flex;
+                list-style: none;
+            }
+            nav a{
+                display: inline-block;
+                padding: 20px;
+                color: #fff;
+                text-decoration: none;
+            }
+            li{
+                position: relative;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+            li .dropdown{
+                position: absolute;
+                top:50%;
+                flex-direction: column;
+                opacity: 0;
+                transition: all 0.3s;
+                pointer-events: none;
+            }
+            li:hover .dropdown{
+                pointer-events:all;
+                top: 100%;
+                opacity: 1;
+                background: purple;
+            }
+            body:has(.more:hover)::before{
+              content: "";
+              z-index: -1;
+              position: absolute;
+              height: 100vh;
+              width: 100vw;
+              background: rgba(0,0,0,0.7);
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li class="more">
+                    <span>More</span>
+                    <ul class="dropdown">
+                        <li>
+                            <a href="#">Press</a>
+                        </li>
+                        <li>
+                            <a href="#">media</a>
+                        </li>
+                        <li>
+                            <a href="#">Portfolio</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </body>
+</html>
