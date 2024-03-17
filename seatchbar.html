@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 90vh;
+            }
+            .search {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50px;
+                border: 2px solid purple;
+                min-width: 350px;
+                justify-content: space-between;
+                border-radius: 100px;
+                overflow: hidden;
+                box-shadow: 0 1px 48px rgb(107 91 180 / 30%)
+            }
+            .search input,
+            .search button {
+                outline: none;
+                border: none;
+                height: 100%;
+                font-size: 16px;
+            }
+            .search input {
+                padding: 10px 20px;
+                width: 100%;
+            }
+            .search button {
+                min-width: 100px;
+                background: purple;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <form class="search">
+            <input type="search" placeholder="search here.." />
+            <button>search</button>
+        </form>
+    </body>
+</html>
