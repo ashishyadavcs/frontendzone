@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup{
+            height: 100vh;
+            width: 100vw;
+            position:fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,0.8);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 2;
+            transition: all 0.3s;
+        }
+        .popup.active{
+            opacity: 1;
+            pointer-events: all;
+        }
+        .content{
+            width: 600px;
+            background: #fff;
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 8px;
+            display: flex;
+            height: 300px;
+            transition: all 0.6s cubic-bezier(0.87, -0.53, 0.08, 0.66)
+            
+        }
+        .popup.active .content{
+            top: 50%;
+        }
+        .right{
+            padding: 20px;
+        }
+        .content img{
+            height: 100%;
+            width: 50%;
+            object-fit: cover;
+            border-radius: 10px 0 0 10px;
+        }
+        .content h2{
+            margin-bottom: 15px;
+        }
+        .content button{
+            outline: none;
+            border: none;
+            padding: 15px 20px;
+            background: black;
+            color: #fff;
+            border-radius: 4px;
+            margin-top: 30px;
+        }
+        .close{
+            position: absolute;
+            right: -5px;
+            top: -5px;
+            height: 30px;
+            width: 30px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .btn{
+            outline: none;
+            border: none;
+            padding: 15px 30px;
+            background: linear-gradient(purple,violet);
+            color: beige;
+            border-radius:8px;
+            cursor: pointer;
+            font-size: 16px;
+
+        }
+    </style>
+    </head>
+    <body>
+        <button class="btn">open popup</button>
+        <div class="popup">
+            <div class="content">
+                <span class="close">&times;</span>
+                <img src="https://images.unsplash.com/photo-1501502909970-6284bb82bc12?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+                <div class="right">
+                    <h2>Signup notification</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit at nam
+                    necessitatibus in et obcaecati animi voluptatum perferendis? Repudiandae ipsam
+                    nulla doloribus ad quas, quam commodi molestias at doloremque illum.
+                </p>
+                <button>Signup now</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+         const popup=document.querySelector('.popup')
+         const close=document.querySelector('.close')
+         close.onclick=()=>{
+            popup.classList.remove('active')
+         }
+        //  setTimeout(() => {
+        //     popup.classList.add('active')
+        //  }, 5000);
+        const openbtn=document.querySelector('.btn')
+        //open popup on buton click
+        openbtn.onclick=()=>{
+            popup.classList.add('active')
+        }
+        </script>
+    </body>
+</html>
