@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            nav {
+                background: purple;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            nav img{
+                max-height: 100%;
+            }
+            nav a:not(.brand) {
+                color: #fff;
+                text-decoration: none;
+                padding:10px 20px;
+                font-weight: 600;
+            }
+            nav ul {
+                display: flex;
+                list-style: none;
+                align-items: center;
+            }
+            nav ul a{
+                padding: 10px 15px;
+                display: inline-block;
+            }
+            nav li{
+                display: flex;
+                padding: 10px;
+            }
+            ul li {
+                background: purple;
+            }
+            .dropdown {
+                display: flex;
+                align-items: center;
+                min-width: 100px;
+                justify-content: center;
+                position: relative;
+                z-index: 2;
+                height:55px;
+            }
+            .dropdown li:not(:last-child) {
+                border-bottom: 1px solid #fff;
+            }
+            .dropdown::before {
+                cursor: pointer;
+                content: "";
+                border: 10px solid;
+                position: relative;
+                top: 5px;
+                border-color: #fff transparent transparent transparent;
+            }
+            .dropdown ul {
+                flex-direction: column;
+                position: absolute;
+                top: 40px;
+                left: 50%;
+                transform: translate(-50%);
+                background: inherit;
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s;
+                z-index: 0;
+            }
+            .dropdown:hover ul {
+                opacity: 1;
+                pointer-events: all;
+                top: 47px;
+            }
+            body::before{
+                content: "";
+                height: 100vh;
+                width: 100vw;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                background: rgba(0,0,0,0.7);
+                opacity: 0;
+                transition: all 0.3s;
+            }
+            body:has(.dropdown:hover)::before{
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="#" class="brand">
+                <img
+                    height="30"
+                    src="https://www.birdlenscreation.com/_next/image?url=https%3A%2F%2Fimages.prismic.io%2Fdevcms%2F1b1489b2-0bd6-4fe4-937c-d58b25275874_web.png%3Fauto%3Dcompress%2Cformat&w=384&q=75"
+                />
+            </a>
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">Services</a>
+                </li>
+                <li>
+                    <a href="">wedding portfolio</a>
+                </li>
+                <li class="dropdown">
+                    <ul>
+                        <li>
+                            <a href="">Gallery </a>
+                        </li>
+                        <li>
+                            <a href="">Favbaby</a>
+                        </li>
+                        <li>
+                            <a href="">Gallery </a>
+                        </li>
+                        <li>
+                            <a href="">Favbaby</a>
+                        </li>
+                        <li>
+                            <a href="">Gallery </a>
+                        </li>
+                        <li>
+                            <a href="">Favbaby</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Gallery </a>
+                </li>
+                <li>
+                    <a href="">Favbaby</a>
+                </li>
+            </ul>
+        </nav>
+    </body>
+</html>
