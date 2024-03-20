@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 95vh;
+                font-family: sans-serif;
+            }
+            .container {
+                display: flex;
+                width: 800px;
+                border-radius: 8px;
+                box-shadow: 0 1px 2px #00000090;
+                overflow: hidden;
+            }
+            img {
+                width: 50%;
+            }
+            form {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 50%;
+            }
+            .container input {
+                padding: 10px 13px;
+                width: 250px;
+                display: block;
+                outline: none;
+                border: 2px solid #ddd;
+                font-size: 16px;
+            }
+            .container input:focus {
+                border: 2px solid blue;
+            }
+            .container input::placeholder {
+                opacity: 0;
+            }
+            .container label {
+                margin-bottom: 10px;
+                position: relative;
+                display: inline-block;
+            }
+            .container label::before {
+                content: attr(for);
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 10px;
+                pointer-events: none;
+                transition: all 0.3s;
+                background: #fff;
+                padding: 0 5px;
+            }
+            .container label:has(input:focus)::before {
+                top: 0;
+                color: blue;
+            }
+            .container label:has(input:not(:placeholder-shown))::before {
+                top: 0;
+            }
+            .container h2 {
+                font-size: 30px;
+                margin-bottom: 20px;
+                background: -webkit-linear-gradient(#eee, blue);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .container .content{
+                display: flex;
+                flex-direction: column;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img
+                src="https://www.frontendzone.com/_next/image?url=%2Fdev%2Fabout-frontend.png&w=1080&q=75"
+            />
+            <form>
+               <div class="content">
+                <h2>Please Registration</h2>
+                <label for="name">
+                    <input type="text" placeholder="Name" />
+                </label>
+                <label for="email">
+                    <input type="email" placeholder="Email" />
+                </label>
+                <label for="password">
+                    <input type="password" placeholder="Name" />
+                </label>
+               </div>
+            </form>
+        </div>
+    </body>
+</html>
