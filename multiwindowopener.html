@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>JS mini project</title>
         <style>
             * {
                 margin: 0;
@@ -73,7 +73,7 @@
                 top: 0;
             }
             .container h2 {
-                font-size: 30px;
+                font-size: 20px;
                 margin-bottom: 20px;
                 background: -webkit-linear-gradient(#eee, blue);
                 background-clip: text;
@@ -98,17 +98,17 @@
                 width: 250px;
             }
             /*responsive upadted*/
-            @media (max-width:767px) {
-                .container{
+            @media (max-width: 767px) {
+                .container {
                     flex-direction: column;
                     max-width: 95%;
                     padding: 30px 10px;
                     box-shadow: none;
                 }
-                .container> *{
+                .container > * {
                     width: 100%;
                 }
-                .container img{
+                .container img {
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -125,28 +125,31 @@
             <img
                 src="https://www.frontendzone.com/_next/image?url=%2Fdev%2Fabout-frontend.png&w=1080&q=75"
             />
-            <form>
+            <form onsubmit="openwindow()">
                 <div class="content">
-                    <h2>Please Registration</h2>
-                    <label for="name">
-                        <input type="text" placeholder="Name" />
+                    <h2>Multi window opener</h2>
+                    <label for="url">
+                        <input name="url" type="url" placeholder="url" />
                     </label>
-                    <label for="email">
-                        <input type="email" placeholder="Email" />
+                    <label for="Number">
+                        <input name="number" type="number" placeholder="number" />
                     </label>
-                    <label for="password">
-                        <input type="password" placeholder="Name" />
-                    </label>
-                    <select>
-                        <option selected hidden>choose course</option>
-                        <option>BCA</option>
-                        <option>MCA</option>
-                        <option>BTech</option>
-                        <option>BSc</option>
-                    </select>
-                    <button>Sign Up</button>
+
+                    <button>Open Now</button>
                 </div>
             </form>
         </div>
+        <script>
+            function openwindow() {
+                event.preventDefault()
+                const { url, number } = event.target; //object distructuring
+                // const url=event.target.url
+                // const number=event.target.number
+                const array = [...Array(Number(number.value))];
+                array.map(el => {
+                    window.open(url.value);
+                });
+            }
+        </script>
     </body>
 </html>
