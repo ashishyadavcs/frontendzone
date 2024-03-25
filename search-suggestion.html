@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                min-height: 90vh;
+            }
+            .search {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50px;
+                width: 500px;
+                border: 2px solid purple;
+                min-width: 350px;
+                justify-content: space-between;
+                border-radius: 100px;
+                overflow: hidden;
+                box-shadow: 0 1px 48px rgb(107 91 180 / 30%);
+                position: sticky;
+                top: 20px;
+                z-index: 2;
+            }
+            .search input,
+            .search button {
+                outline: none;
+                border: none;
+                height: 100%;
+                font-size: 16px;
+            }
+            .search input {
+                padding: 10px 20px;
+                width: 100%;
+            }
+            .search button {
+                min-width: 100px;
+                background: purple;
+                color: #fff;
+            }
+            .list{
+                list-style: none;
+                margin-top: 20px;
+                width: 500px
+            }
+            .list li{
+                padding: 5px 10px;
+                margin-bottom: 3px;
+                cursor: pointer;
+                background: #f1f1f1;
+            }
+            .list li:hover{
+                background: #ddd;
+            }
+        </style>
+    </head>
+    <body>
+        <form class="search">
+            <input name="query" oninput="searchnow()" type="search" placeholder="search here.." />
+            <button>search</button>
+        </form>
+        <ul class="list"></ul>
+
+        <script>
+            const query = new URLSearchParams(window.location.search);
+            document.querySelector(".search input").value = query.get("query");
+
+            const apiurl = `https://jsonplaceholder.typicode.com/posts`;
+            const fetchData = async () => {
+                return fetch(apiurl).then(res => res.json());
+            };
+            fetchData().then(res => {
+                res.filter(el => el.title).map(data => {
+                    document.querySelector(".list").innerHTML += `
+              <li>${data.title}</li>
+              `;
+                });
+            });
+
+            function searchnow() {
+                const value = event.target.value;
+                const inputevent = event;
+                document.querySelectorAll(".list li").forEach(li => {
+                    if (li.innerText.includes(value) && !value == "") {
+                        li.style.display = "block";
+                        li.onclick = () => {
+                            console.log("clickinh");
+                            inputevent.target.value = li.innerText;
+                        };
+                    } else {
+                        li.style.display = "none";
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
