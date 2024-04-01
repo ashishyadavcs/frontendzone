@@ -1,0 +1,10 @@
+<div class="slide">slide1</div>
+<div class="slide">slide2</div>
+<div class="slide">slide3</div>
+<script>
+    const slides = [...document.querySelectorAll(".slide")].map(slide => {
+     slide.setAttribute("data-color", "#fcc01");
+     return slide
+    });
+    console.log(slides);
+</script>

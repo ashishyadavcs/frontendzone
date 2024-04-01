@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: sans-serif;
+            background: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .info{
+            width: 50%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .info h1{
+            margin-bottom: 20px;
+        }
+        .container{
+            display: flex;
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+        .right{
+            display: flex;
+            flex-direction: column;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+        button{
+            padding: 14px 20px;
+            outline: none;
+            border: none;
+            font-size: 16px;
+            border-radius: 4px;
+            background: #000;
+            color: #fff;
+            position: relative;
+            display: flex;
+            gap: 20px;
+        }
+        .right button:not(:last-child){
+            margin-bottom: 15px;
+        }
+        .right button::before{
+            content: '';
+            height: calc(100% + 4px);
+            width: calc(100% + 4px);
+            display: inline-block;
+            background: linear-gradient(to right,green,yellow);
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 4px;
+        }
+        .right button:nth-of-type(2)::before{
+            background: linear-gradient(to right,yellow,green);
+            
+        }
+        form input{
+            padding: 14px 20px;
+            outline: none;
+            border: none;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border-radius: 4px;
+            background:#1c1c1c;
+            color: #fff;
+        }
+         form button{
+            background: linear-gradient(to right,green,yellow);
+         }
+        a{color: white;}
+
+        @media (max-width:767px){
+            .info{
+                width: 90%;
+            }
+            body{
+                padding: 80px 20px;
+            }
+            .container{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h1>Login to your account</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit sint numquam officia vel, assumenda inventore recusandae, officiis ducimus magni velit, nesciunt esse ullam nisi quidem. Eius quasi in sapiente ducimus.</p>
+    </div>
+    <div class="container">
+        <form>
+           <input type="email" placeholder="Enter your email"/>
+           <input type="password" placeholder="Enter your password"/>
+           <button>login to your account</button>
+        </form>
+        <div class="right">
+           <button><i class="fa fa-google"></i>signin with google</button>
+           <button><i class="fa fa-facebook"></i>signin with facebook</button>
+           <button><i class="fa fa-apple"></i>signin with apple account</button>
+        </div>
+    </div>
+    <a href="/">forget password</a>
+</body>
+</html>
