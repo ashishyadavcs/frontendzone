@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        font-family: sans-serif;
+        overflow-x: hidden;
+        background: url(./bg.jpg);
+      }
+      form {
+        display: flex;
+        gap: 10px;
+      }
+      input,
+      button,
+      .tasks span {
+        outline: none;
+        border: none;
+        padding: 14px 30px;
+        font-size: 16px;
+        border-radius: 3px;
+      }
+      h1 {
+        margin-bottom: 30px;
+      }
+      button {
+        background: blue;
+        color: #fff;
+        cursor: pointer;
+      }
+      input,
+      .tasks span {
+        border: 2px solid;
+        background: #fff;
+      }
+      .tasks {
+        list-style: none;
+        margin-top: 10px;
+      }
+      .tasks li {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        transition: all 0.3s;
+      }
+      .tasks span {
+        display: inline-block;
+        min-width: 260px;
+      }
+      .tasks li.delete{
+        opacity: 0;
+        transform: translateX(100%)
+      }
+      .tasks li.delete ~ li{
+        transform: translateY(calc(-100% - 10px));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Task Manager</h1>
+      <form onsubmit="addTask()">
+        <input required name="task" type="text" placeholder=" Enter task detail" />
+        <button>Add</button>
+      </form>
+      <ul class="tasks"></ul>
+    </div>
+    <script>
+      let tasks = [];
+      if(localStorage.getItem('tasks')){
+        tasks=[...JSON.parse(localStorage.getItem('tasks'))]
+      }
+      const addTask = () => {
+        event.preventDefault();
+        tasks.push(event.target.task.value);
+        event.target.task.value = "";
+        console.log(tasks)
+        updatedList();
+      };
+
+      const deleteTask = (index) => {
+        const consent=confirm('are your to delete?')
+        if(!consent) return
+
+        tasks.splice(index, 1);
+        document.querySelectorAll('.tasks li')[index].classList.add('delete')
+        setTimeout(() => {
+          updatedList()
+        }, 600);
+      };
+
+      const updatedList = () => {
+        localStorage.setItem('tasks',JSON.stringify(tasks))
+        document.querySelector(".tasks").innerHTML = "";
+        tasks.map((el, i) => {
+          document.querySelector(".tasks").innerHTML+= `
+            <li>
+              <span>${el}</span>
+              <button onclick="deleteTask(${i})">delete</button>
+            </li>
+            `;
+        });
+      };
+      updatedList()
+    </script>
+  </body>
+</html>
