@@ -91,9 +91,8 @@
       };
 
       const deleteTask = (index) => {
-        const consent=confirm('are your to delete?')
+        const consent=confirm('are you sure to delete?')
         if(!consent) return
-
         tasks.splice(index, 1);
         document.querySelectorAll('.tasks li')[index].classList.add('delete')
         setTimeout(() => {
