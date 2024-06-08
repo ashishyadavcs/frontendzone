@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            span {
+                height: 50px;
+                width: 50px;
+                background: green;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 3px;
+            }
+            span::before {
+                content: "";
+                display: inline-block;
+                height: 35px;
+                width: 35px;
+                background: #fff;
+                clip-path: polygon(
+                    50% 0%,
+                    61% 35%,
+                    98% 35%,
+                    68% 57%,
+                    79% 91%,
+                    50% 70%,
+                    21% 91%,
+                    32% 57%,
+                    2% 35%,
+                    39% 35%
+                );
+            }
+            span.active ~ span {
+                background: #ddd;
+            }
+            span.half {
+                background: linear-gradient(to right, green 50%, #ddd 50%);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="rating"></div>
+        <script>
+            const showRating = (rating, total) => {
+                const rating_container = document.querySelector(".rating");
+                rating_container.innerHTML = "";
+                [...Array(total)].map(
+                    (s, i) => (rating_container.innerHTML += `<span class="star"></span>`)
+                );
+                ("active");
+                if (rating > parseInt(rating)) {
+                    rating_container.children[parseInt(rating)].classList.add("active", "half");
+                } else {
+                    rating_container.children[rating - 1].classList.add("active");
+                }
+
+                [...rating_container.children].forEach((s, i,arr) => {
+                    s.onmouseover = () => {
+                        rating = i + 1;
+                        arr.forEach(s=>s.classList='star')
+                        rating_container.children[rating - 1].classList.add("active");
+                    };
+                });
+            };
+
+            showRating(3.5, 5); //call initial showrating
+        </script>
+    </body>
+</html>
