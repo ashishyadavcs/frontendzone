@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+           
+            nav > ul{
+                display: flex;
+                width: 100%;
+            }
+            ul{
+                list-style: none;
+                width: 200px;
+            }
+            li:has(.dropdown){
+                position: relative;
+            }
+            li:hover > .dropdown{
+                display: block;
+                left: 50%;
+                top: 100%;
+            }
+            .dropdown{
+                display: none;
+                position: absolute;
+                
+            }
+            li a{
+                display: inline-block;
+                padding: 10px;
+                background: #000;
+                color: #fff;
+                width: max-content;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="">home</a>
+                </li>
+                <li><a href="">dropdown</a>
+                <ul class="dropdown">
+                    <li>
+                        <a href="">link1</a>
+                        <ul class="dropdown">
+                            <li>
+                                <a href="">link1</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                </li>
+            </ul>
+        </nav>
+        <script>
+            Array.prototype.myreduce=(arr,i,arr)=>{
+                return 
+
+            }
+        </script>
+    </body>
+</html>

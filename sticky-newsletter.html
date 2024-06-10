@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: yellow;
+            min-height: 100vh;
+        }
+        .newsletter{
+            background: #fff;
+            padding: 30px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            transition: all 0.3s;
+        }
+        .newsletter form{
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+        }
+        .newsletter input{
+            padding: 10px;
+            outline: none;
+        }
+        .newsletter p{
+            margin: 10px 0 30px;
+        }
+        .newsletter button{
+            outline: none;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+        .newsletter .close{
+            font-size: 50px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+        .newsletter.hide{
+            opacity: 0;
+            pointer-events: none;
+            right: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="newsletter">
+        <span class="close">&times;</span>
+      <h2>Get $$ OFF Your Entire Order!</h2>
+      <p>Plus, become a VIP and gain exclusive access to sales,<br> new product alerts, and more!</p>
+      <form class="subscribe">
+         <input type="email" placeholder="Enter your email"/>
+         <button>subscribe</button>
+      </form>
+    </div>
+    <script>
+        const closeicon=document.querySelector('.close')
+        closeicon.onclick=()=>document.querySelector('.newsletter').classList.add('hide')
+    </script>
+</body>
+</html>

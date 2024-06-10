@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            nav a{
+                display: inline-block;
+                padding: 20px;
+                text-decoration: none;
+            }
+            .dropdown>a::after{
+                content: "";
+                display: inline-block;
+                height:6px;
+                width: 6px;
+                margin-left: 5px;
+                margin-top: -7px;
+                border-top:2px solid;
+                border-right:2px solid;
+                transform: rotate(137deg);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="" >tvs</a>
+                        <ul>
+                            <li>
+                                <a href="">Home</a>
+                            </li>
+                            <li>
+                                <a href="">Home</a>
+                            </li>
+                            <li>
+                                <a href="">Home</a>
+                            </li>
+                            <li>
+                                <a href="">Home</a>
+                            </li>
+                            <li>
+                                <a href="">Home</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </body>
+</html>
