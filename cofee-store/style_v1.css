@@ -282,6 +282,7 @@ section p {
 .banner {
     background: url(./images/banner-bg.png);
     color: #fff;
+    min-height: calc(100vh - 60px);
     padding: 100px 0 95px;
 }
 .banner h1 {
@@ -383,23 +384,70 @@ footer .right {
     transform: rotateY(180deg);
 }
 /*footer css end*/
-@media (min-width:1120px){
-    section .container,.services .cards{
-        flex-wrap: nowrap!important
+
+/*popup css*/
+.popup-active::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+.popup {
+    z-index: 2;
+    width: 80%;
+    height: 400px;
+    border-radius: 16px;
+    background: url(./images/banner-bg.png);
+    max-width: 90%;
+    border: 2px solid #fff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.popup .close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #fff;
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+}
+.popup-active .popup {
+    top: 50%;
+}
+@media (min-width: 1120px) {
+    section .container,
+    .services .cards {
+        flex-wrap: nowrap !important;
     }
 }
-@media (min-width: 768px) and (max-width: 992px){
-.about .sub-heading{
-    width: 100%;
-}
-footer .container{
-    grid-template-columns: auto;
-    
-}
-footer .mug{
-    width: 150px;
-    bottom: calc(100% -100px);
-}
+@media (min-width: 768px) and (max-width: 992px) {
+    .about .sub-heading {
+        width: 100%;
+    }
+    footer .container {
+        grid-template-columns: auto;
+    }
+    footer .mug {
+        width: 150px;
+        bottom: calc(100% -100px);
+    }
 }
 @media (min-width: 992px) and (max-width: 1024px) {
     footer .mug {

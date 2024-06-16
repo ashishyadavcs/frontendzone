@@ -297,6 +297,7 @@ section p {
 .newsletter form {
     margin-top: 26px;
     display: flex;
+    justify-content: center;
     border-radius: 4px;
     overflow: hidden;
 }

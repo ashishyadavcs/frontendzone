@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Coffee website tutorial</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -48,7 +48,7 @@
                         It is best to start your day with a cup of coffee. Discover the best
                         flavours coffee you will ever have. We provide the best for our customers.
                     </p>
-                    <button class="btn">order now</button>
+                    <button onclick="openPopup()" class="btn">order now</button>
                 </div>
             </section>
             <section class="about">
@@ -224,11 +224,11 @@
             <section class="newsletter">
                 <div class="container">
                     <h2>Subscribe to get the Latest News</h2>
-                <p>Don’t miss out on our latest news, updates, tips and special offers</p>
-                <form>
-                    <input type="email" placeholder="enter your mail" />
-                    <button class="btn">Subscribe</button>
-                </form>
+                    <p>Don’t miss out on our latest news, updates, tips and special offers</p>
+                    <form>
+                        <input type="email" placeholder="enter your mail" />
+                        <button class="btn">Subscribe</button>
+                    </form>
                 </div>
             </section>
         </main>
@@ -294,6 +294,10 @@
             <img class="mug left" src="./images/fresh-coffee.png" />
             <img class="mug right" src="./images/fresh-coffee.png" />
         </footer>
+        <div class="popup">
+            <span class="close">&times;</span>
+         <h2>Offer 20 % off</h2>
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="./main.js"></script>
     </body>

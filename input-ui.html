@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-      /* input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button{
-        appearance: none;
-      } */
-    </style>
-</head>
-<body>
-    <input type="number" placeholder="age"/>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            button {
+                padding: 10px 40px;
+                background: red;
+                color: #fff;
+                font-size: 18px;
+                transition: all 1s;
+                border: none;
+                cursor: pointer;
+                animation: 1s linear forwards;
+                margin-bottom: 10px;
+                display: block;
+            }
+            @keyframes pos {
+                100% {
+                    position: absolute;
+                    top: 50%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <p>disclaimer - just a fun</p>
+        <button onclick="playAudio()">unsubscribe</button>
+        <button onclick="playNoraml()">Subscribe</button>
+        <script>
+            const file = "https://ashish221306.github.io/call-comedy.mp3";
+            const audio = new Audio(file);
+            audio.preload = true;
+            const playNoraml = () => {
+                const e=event
+                event.target.innerHTML = "Thanks";
+                setTimeout(() => {
+                    e.target.innerHTML = "Subscribed";
+                }, 400);
+            };
+            const playAudio = () => {
+                audio.currentTime = 26;
+                audio.play();
+                setTimeout(() => {
+                    audio.pause();
+                }, 1500);
+            };
+        </script>
+    </body>
 </html>
