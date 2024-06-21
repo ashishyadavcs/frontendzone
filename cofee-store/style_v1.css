@@ -13,6 +13,9 @@
 body {
     font-family: var(--fm-playfair);
 }
+body:has(header.active){
+    overflow: hidden;
+}
 header {
     background: #000;
     position: relative;
