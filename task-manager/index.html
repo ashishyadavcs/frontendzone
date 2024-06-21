@@ -66,6 +66,9 @@
       .tasks li.delete ~ li{
         transform: translateY(calc(-100% - 10px));
       }
+      .video{
+        width: 100%;
+      }
     </style>
   </head>
   <body>
@@ -76,6 +79,10 @@
         <button>Add</button>
       </form>
       <ul class="tasks"></ul>
+
+      <div class="video">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/UvYFzD-0LrM?si=PfPbqteyo6jyJmKJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     </div>
     <script>
       let tasks = [];
