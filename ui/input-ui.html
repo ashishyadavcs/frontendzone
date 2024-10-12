@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            button {
+                padding: 20px 40px;
+                background: red;
+                border: none;
+                color: #ffff;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="playaudio()">Play audio</button>
+        <button onclick="pauseAudio()">Pause audio</button>
+        <button onclick="startFrom10()">play from 10s</button>
+        <script>
+            const audio = new Audio();
+            audio.src = "https://www.youtube.com/watch?v=jKw57mGxbXE";
+            console.log(audio)
+            
+            function playaudio() {
+                audio.play();
+            }
+            function pauseAudio(){
+                audio.pause()
+            }
+            function startFrom10(){
+                audio.currentTime=10
+                audio.play()
+            }
+        </script>
+    </body>
+</html>
