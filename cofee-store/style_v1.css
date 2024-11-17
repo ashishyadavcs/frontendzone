@@ -156,10 +156,12 @@ section p {
 .ordernow {
     color: #fff;
     padding: 90px 0;
-    background: url(./images/newsletter-bg.png) no-repeat;
     background-size: cover;
     margin-bottom: 100px;
     position: relative;
+}
+.loaded .ordernow{
+    background: url(./images/newsletter-bg.png) no-repeat;
 }
 .ordernow .container {
     display: flex;
@@ -283,7 +285,7 @@ section p {
 
 /*banner css*/
 .banner {
-    background: url(./images/banner-bg.png);
+    background: url(./images/banner-bg-1.png);
     color: #fff;
     min-height: calc(100vh - 60px);
     padding: 100px 0 95px;
@@ -303,8 +305,10 @@ section p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url(./images/newsletter-bg.png);
     color: #fff;
+}
+.loaded .newsletter{
+    background: url(./images/newsletter-bg.png);
 }
 .newsletter form {
     margin-top: 26px;
@@ -329,13 +333,16 @@ section p {
 }
 /*footer css*/
 footer {
-    background: url(./images/footer-bg.png), linear-gradient(#442808, #7a480e);
+    
     color: #fff;
     padding: 162px 0 60px;
     position: relative;
     background-position: bottom center, center;
     background-size: cover;
     background-blend-mode: multiply;
+}
+.loaded footer{
+    background: url(./images/footer-bg.png), linear-gradient(#442808, #7a480e);
 }
 footer footer .bg {
     position: absolute;
@@ -403,7 +410,6 @@ footer .right {
     width: 80%;
     height: 400px;
     border-radius: 16px;
-    background: url(./images/banner-bg.png);
     max-width: 90%;
     border: 2px solid #fff;
     color: #fff;
@@ -415,6 +421,9 @@ footer .right {
     top: -100%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.loaded .popup{
+    background: url(./images/banner-bg-1.png);
 }
 .popup .close {
     position: absolute;
