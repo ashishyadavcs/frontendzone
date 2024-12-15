@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            button {
+                position: relative;
+                padding: 14px 40px;
+                border: none;
+                color: #fff;
+                z-index: 1;
+                border-radius: 100px;
+                background: linear-gradient(
+                    to right,
+                    #f600ff,
+                    blue,
+                    #fff 50%,
+                    blue
+                );
+                background-size: 300% 100%;
+                transition: all 0.3s;
+                cursor: pointer;
+                font-weight: 600;
+            }
+            button:hover {
+                background-position: 100% 0;
+            }
+            button::after {
+                content: "";
+                position: absolute;
+                width: calc(99% - 5px);
+                height: calc(100% - 5px);
+                top: 50%;
+                left: 50%;
+                border-radius: inherit;
+                transform: translate(-50%, -50%);
+
+                z-index: -1;
+            }
+        </style>
+    </head>
+    <body>
+        <button>same me</button>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            :root {
+                --grid-color: #ffffff14;
+                --grid-size: 20px 20px;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background: rgb(1, 1, 27);
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                background-image: linear-gradient(
+                        to right,
+                        var(--grid-color) 1px,
+                        transparent 1px
+                    ),
+                    linear-gradient(
+                        to bottom,
+                        var(--grid-color) 1px,
+                        transparent 1px
+                    );
+                background-size: var(--grid-size);
+            }
+            h1 {
+                font-size: 60px;
+                text-shadow: 0 27px 108px;
+            }
+            h1 span {
+                color: limegreen;
+            }
+            .mid {
+                margin: 20px 0 10px;
+            }
+            .container{
+                position: relative;
+            }
+            .container::after{
+                content: "";
+                height: 100px;
+                width: 100%;
+                position: absolute;
+                background:#ffffff4a;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                filter: blur(100px);
+                z-index: -1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <small>@frontendzone</small>
+            <p class="mid">Ultimate cheatsheet for 🔥</p>
+            <h1>
+                Modern
+                <span
+                    >web <br />
+                    developers</span
+                >
+            </h1>
+        </div>
+    </body>
+</html>

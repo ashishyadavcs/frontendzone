@@ -1,95 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            background: linear-gradient(to right,#f7dcf7, violet);
-            min-height: 90vh;
-            font-family: sans-serif;
-            padding: 30px;
-        }
-        ul{
-            list-style: none;
-        }
-        ul li{
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            position: relative;
-            width: max-content;
-        }
-        li::before{
-            content: attr(data-index);
-            height: 30px;
-            width: 30px;
-            background: #fff;
-            border-radius: 50%;
-            flex-shrink: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        li:after{
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50px;
-            height: 3px;
-            width: 0;
-            background: blue;
-            transition: all 0.3s;
-            
-        }
-        li.active::after{
-            animation:progress 2s linear forwards;
-        }
-        h1{
-            margin-bottom: 15px;
-        }
-        @keyframes progress {
-            80%{
-                left: 50%;
-                width: 50%;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
-            100%{
-                width: 0%;
-                left: 100%;
-
+            body {
+                background: linear-gradient(to right, #f7dcf7, violet);
+                min-height: 90vh;
+                font-family: sans-serif;
+                padding: 30px;
             }
-        }
-    </style>
-</head>
-<body>
-    <h1>What to hire a developer</h1>
-    <ul>
-        <li class="active" data-index="1">Lorem ipsum dolor sit amet consectetur</li>
-        <li data-index="2">Lorem ipsum dolor sit amet consectetur</li>
-        <li data-index="3">Lorem ipsum dolor sit amet consectetur</li>
-        <li data-index="4">Lorem ipsum dolor sit amet consectetur</li>
-        <li data-index="5">Lorem ipsum dolor sit amet consectetur</li>
-        <li data-index="6">Lorem ipsum dolor sit amet consectetur</li>
-    </ul>
-    <script>
-        const slides=document.querySelectorAll('ul li')
-        slides.forEach(el=>{
-            el.addEventListener('animationend',()=>{
-                slides.forEach(el=>el.classList.remove('active'))
-                if(el.nextElementSibling){
-                    el.nextElementSibling.classList.add('active')
-                }else{
-                    slides[0].classList.add('active')
+            ul {
+                list-style: none;
+            }
+            ul li {
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                position: relative;
+                width: max-content;
+            }
+            li::before {
+                content: attr(data-index);
+                height: 30px;
+                width: 30px;
+                background: #fff;
+                border-radius: 50%;
+                flex-shrink: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            li:after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50px;
+                height: 3px;
+                width: 0;
+                background: blue;
+                transition: all 0.3s;
+            }
+            li.active::after {
+                animation: progress 2s linear forwards;
+            }
+            h1 {
+                margin-bottom: 15px;
+            }
+            @keyframes progress {
+                80% {
+                    left: 50%;
+                    width: 50%;
                 }
-            })
-        })
-    </script>
-</body>
+                100% {
+                    width: 0%;
+                    left: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>What to hire a developer</h1>
+        <ul>
+            <li class="active" data-index="1">
+                Lorem ipsum dolor sit amet consectetur
+            </li>
+            <li data-index="2">Lorem ipsum dolor sit amet consectetur</li>
+            <li data-index="3">Lorem ipsum dolor sit amet consectetur</li>
+            <li data-index="4">Lorem ipsum dolor sit amet consectetur</li>
+            <li data-index="5">Lorem ipsum dolor sit amet consectetur</li>
+            <li data-index="6">Lorem ipsum dolor sit amet consectetur</li>
+        </ul>
+        <script>
+            const slides = document.querySelectorAll("ul li");
+            slides.forEach((el) => {
+                el.addEventListener("animationend", () => {
+                    slides.forEach((el) => el.classList.remove("active"));
+                    if (el.nextElementSibling) {
+                        el.nextElementSibling.classList.add("active");
+                    } else {
+                        slides[0].classList.add("active");
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>
