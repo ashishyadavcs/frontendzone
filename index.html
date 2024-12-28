@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Frontendzone</h1>
-    <a href="https://frontendzone.com">owned by https://frontendzone.com</a>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Frontendzone github</title>
+        <meta name="description" content="frontendzone - master frontend development"/>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background: linear-gradient(
+                    to right,
+                    rgb(143, 253, 255),
+                    rgb(108, 252, 190)
+                );
+            }
+            .container {
+                padding: 0 50px;
+            }
+            .btn {
+                padding: 20px 30px;
+                outline: none;
+                background: blue;
+                color: #fff;
+                display: inline-block;
+            }
+            .source-code {
+                margin: 40px 0;
+            }
+            .block {
+                display: block;
+            }
+            h1 {
+                margin: 0 0 10px;
+            }
+            .codes{
+                display:  flex;
+                gap: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Frontendzone</h1>
+            <a href="https://frontendzone.com"
+                >owned by https://frontendzone.com</a
+            >
+            <a class="btn block source-code" href="https://github.com/ashishyadavcs">source codes</a>
+            <a class="btn block source-code" href="https://www.youtube.com/@frontendzonedotcom?sub_confirmation=1">youtube channel</a>
+            
+            
+            <ul class="codes">
+                <li><a href="./html/">HTML</a></li>
+                <li><a href="./css/">CSS</a></li>
+            </ul>
+        </div>
+    </body>
 </html>
