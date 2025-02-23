@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            :root {
+                --scale: 1;
+            }
+            .box {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                span {
+                    border-radius: 50%;
+                    height: 20px;
+                    width: 20px;
+                    background: red;
+                    animation: jump 1.3s ease-in-out infinite;
+                    &:nth-child(1) {
+                        animation-delay: -0.32s;
+                    }
+                    &:nth-child(2) {
+                        animation-delay: -0.16s;
+                    }
+                }
+            }
+            @keyframes jump {
+                0%,
+                80%,
+                100% {
+                    transform: scale(0);
+                }
+                40% {
+                    transform: scale(1);
+                }
+            }
+            /* cards */
+            .cards {
+                display: flex;
+                gap: 10px;
+                span {
+                    height: 300px;
+                    width: 200px;
+                    background: red;
+                    transition: all 0.3s ease-in-out;
+                    transform-style: preserve-3d;
+                    &:hover {
+                        transform: scale(1.1);
+                        margin: 0 10px;
+                        :has(+ &),
+                        & + span {
+                            transform: scale(1.08) ;
+                            perspective: 200px;
+                        }
+                    }
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="cards">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </body>
+</html>
